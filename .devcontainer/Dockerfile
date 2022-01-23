@@ -30,11 +30,16 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requ
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends libopenmpi-dev \
     x11-apps \
-    python3-opengl
+    python3-opengl \
+    xvfb
 ENV DISPLAY host.docker.internal:0.0
 
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
+
+# jupyter lab
+RUN sudo pip3 install jupyterlab
+RUN python -m pip install pyvirtualdisplay
 
 # spinningup
 RUN git clone https://github.com/openai/spinningup.git

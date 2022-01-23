@@ -1,2 +1,2 @@
-jupyterlab
 PyOpenGL
+box2d

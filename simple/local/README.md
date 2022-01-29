@@ -1,0 +1,2 @@
+# local検証用のDcokerfile
+vscodeのRemote-Containerの機能を使用しての開発環境構築ではなく素のdockerを使っての検証環境構築に使用するDockerfile

@@ -8,6 +8,8 @@ RUN apt-get update \
     python3 \
     python3-pip \
     python3-opengl \
+    build-essential \
+    git \
     xvfb
 
 ## python setting
@@ -20,7 +22,7 @@ RUN pip3 install jupyterlab
 COPY requirements.txt /tmp/pip-tmp/
 RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
    && rm -rf /tmp/pip-tmp
-RUN python -m pip install pyvirtualdisplay
+RUN python3 -m pip install pyvirtualdisplay
 
 # spinningup
 RUN git clone https://github.com/openai/spinningup.git

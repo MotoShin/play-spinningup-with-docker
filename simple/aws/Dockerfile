@@ -6,10 +6,13 @@ FROM nvidia/cuda:11.6.0-runtime-ubuntu18.04
 RUN apt-get update \
     && apt-get -y install --no-install-recommends libopenmpi-dev \
     python3 \
+    python3-dev \
     python3-pip \
     python3-opengl \
     build-essential \
     git \
+    openmpi-bin \
+    ssh \
     xvfb
 
 ## python setting

@@ -28,12 +28,9 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requ
 RUN python3 -m pip install pyvirtualdisplay
 
 # spinningup
-RUN git clone https://github.com/openai/spinningup.git
-WORKDIR /spinningup
-RUN pip3 install -e .
-WORKDIR /
-RUN rm -rf /spinningup
-
-# 作業ディレクトリに移動
 RUN mkdir workspace
+WORKDIR /workspace
+RUN git clone https://github.com/MotoShin/spinningup.git
+WORKDIR /workspace/spinningup
+RUN pip3 install -e .
 WORKDIR /workspace
